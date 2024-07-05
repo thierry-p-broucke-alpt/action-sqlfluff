@@ -14,7 +14,9 @@ RUN apt-get update -y \
         git \
         jq \
         build-essential \
+        ca-certificates \
         libsasl2-dev \
+    && update-ca-certificates \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
