@@ -8,6 +8,8 @@ WORKDIR "$WORKING_DIRECTORY"
 
 SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
 
+COPY /etc/pki/ca-trust/source/anchors/prxcfwqa.telecom.pt.crt /usr/local/share/ca-certificates/prxcfwqa.telecom.pt.crt
+
 # hadolint ignore=DL3008
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
