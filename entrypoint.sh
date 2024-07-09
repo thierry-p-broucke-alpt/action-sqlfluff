@@ -61,7 +61,7 @@ echo '::endgroup::'
 
 #Check file format
 
-echo '::group::🐶 :detective: Checking file format'
+echo '::group::🐶 🕵️ Checking file format'
 for file in $changed_files; do
 if [[ $file =~ ^V[0-9]+_[0-9]{2}[0-9]{2}[0-9]{4}__[^.]+.sql$ ]]; then
 echo "File $file matches the expected format"
