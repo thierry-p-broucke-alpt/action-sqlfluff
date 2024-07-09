@@ -58,6 +58,15 @@ if [[ -f "${INPUT_WORKING_DIRECTORY}/packages.yml" ]]; then
 fi
 echo '::endgroup::'
 
+
+#Check file format
+
+echo '::detective:: Watson, pray tell, are these files adhering to the established standards for nomenclature?' 
+echo 'Im in "$(pwd)"'
+echo 'Didnt run then'
+pwd
+
+
 # Lint changed files if the mode is lint
 if [[ ${SQLFLUFF_COMMAND:?} == "lint" ]]; then
 	echo '::group:: Running sqlfluff 🐶 ...'

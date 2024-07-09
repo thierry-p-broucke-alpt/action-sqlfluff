@@ -1,7 +1,7 @@
 FROM python:3.12-slim
 
 ENV REVIEWDOG_VERSION="v0.17.4"
-ENV GIT_SSL_NO_VERIFY=true
+#ENV GIT_SSL_NO_VERIFY=true
 ENV http_proxy='http://capprxcfwqa.telecom.pt:8080'
 ENV https_proxy='http://capprxcfwqa.telecom.pt:8080'
 
