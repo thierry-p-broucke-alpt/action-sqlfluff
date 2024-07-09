@@ -66,7 +66,7 @@ for file in $changed_files; do
 filename=$(basename "$file")
 if [[ $filename =~ ^V[0-9]+_[0-9]{2}[0-9]{2}[0-9]{4}__[^.]+.sql$ ]]; then
 echo "File $filename matches the expected format"
-echo "File $filename matches the expected format " >> $GITHUB_STEP_SUMMARY
+echo "🚀 Formação do nome do arquivo $filename está em conformidade ✅  " >> $GITHUB_STEP_SUMMARY
 else
 echo "Error: File $filename does not match the expected format (V[0-9]+_[0-9]{2}[0-9]{2}[0-9]{4}__[^.]+.sql)"
 echo "name=sqlfluff-exit-code::1" >>$GITHUB_OUTPUT
