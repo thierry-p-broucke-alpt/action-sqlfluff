@@ -61,10 +61,18 @@ echo '::endgroup::'
 
 #Check file format
 
-echo '::detective:: Watson, pray tell, are these files adhering to the established standards for nomenclature?' 
-echo 'Im in "$(pwd)"'
-echo 'Didnt run then'
-pwd
+echo '::group::🐶 :detective: Checking file format'
+for file in $changed_files; do
+if [[ $file =~ ^V[0-9]+[0-9]{2}[0-9]{2}[0-9]{4}__[^.]+.sql$ ]]; then
+echo "File $file matches the expected format"
+else
+echo "Error: File $file does not match the expected format (V[0-9][0-9][0-9][0-9][0-9]{2}[0-9]{2}[0-9]{4}__[^.]+.sql)"
+echo "name=sqlfluff-exit-code::1" >>$GITHUB_OUTPUT
+echo "name=reviewdog-return-code::1" >>$GITHUB_OUTPUT
+exit 1
+fi
+done
+echo '::endgroup::'
 
 
 # Lint changed files if the mode is lint
